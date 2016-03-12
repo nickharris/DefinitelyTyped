@@ -208,6 +208,11 @@ declare module Q {
     export function all<T>(promises: IPromise<T>[]): Promise<T[]>;
     
     /**
+    *  Returns the first resolved promise of an array. Prior rejected promises are ignored.  Rejects only if all promises are rejected.
+    */
+    export function any<T>(promises: IPromise<T>[]): Promise<T>;
+    
+    /**
     * Returns a promise for the first of an array of promises to become settled.
     */
     export function race<T>(promises: IPromise<T>[]): Promise<T>;
